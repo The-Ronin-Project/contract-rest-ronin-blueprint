@@ -1,0 +1,161 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Ronin Blueprint Service - OpenAPI 3.0",
+    "description": "Ronin Blueprint Service API specification",
+    "contact": {
+      "email": "pecore@projectronin.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Blueprint API",
+      "description": "Ronin blueprint service"
+    }
+  ],
+  "paths": {
+    "/students": {
+      "get": {
+        "summary": "Get all students",
+        "description": "Get all student records",
+        "operationId": "getAllStudents",
+        "tags": [
+          "Blueprint API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "v1/schemas/student.json#/components/schemas/GetAllStudentsResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        },
+        "security": [
+          {
+            "seki": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add a new student",
+        "description": "Add a new student record",
+        "operationId": "addStudent",
+        "tags": [
+          "Blueprint API"
+        ],
+        "requestBody": {
+          "description": "Create a new student",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "v1/schemas/student.json#/components/schemas/CreateStudentRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "v1/schemas/student.json#/components/schemas/CreateStudentResponseBody"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        },
+        "security": [
+          {
+            "seki": []
+          }
+        ]
+      }
+    },
+    "/students/{id}": {
+      "get": {
+        "summary": "Get a student by id",
+        "description": "Get a student record by id",
+        "operationId": "getStudentById",
+        "tags": [
+          "Blueprint API"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "v1/schemas/student.json#/components/schemas/Student"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        },
+        "security": [
+          {
+            "seki": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "seki": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

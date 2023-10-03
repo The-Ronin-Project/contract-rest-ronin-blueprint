@@ -1,0 +1,101 @@
+{
+  "openapi": "3.0.2",
+  "paths": {},
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "components": {
+    "schemas": {
+      "CreateStudentRequestBody": {
+        "title": "",
+        "description": "Request to create new student",
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "default": ""
+          },
+          "lastName": {
+            "type": "string",
+            "default": ""
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "favoriteNumber": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "firstName",
+          "lastName"
+        ]
+      },
+      "CreateStudentResponseBody": {
+        "title": "",
+        "description": "Response for new student creation",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "GetAllStudentsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Student"
+        }
+      },
+      "Student": {
+        "title": "",
+        "description": "A student",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "firstName": {
+            "type": "string",
+            "default": ""
+          },
+          "lastName": {
+            "type": "string",
+            "default": ""
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "favoriteNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+           "id",
+          "firstName",
+          "lastName",
+          "createdAt",
+          "updatedAt"
+        ]
+      }
+    }
+  }
+}
