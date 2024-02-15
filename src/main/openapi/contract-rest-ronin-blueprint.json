@@ -85,13 +85,34 @@
             }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ".dependencies/ronin-contract-shared-v1/ronin-contract-shared-v1.json#/components/schemas/Error"
+                }
+              }
+            }
           },
           "401": {
-            "description": "Not Authorized"
+            "description": "Not Authorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ".dependencies/ronin-contract-shared-v1/ronin-contract-shared-v1.json#/components/schemas/Error"
+                }
+              }
+            }
           },
           "405": {
-            "description": "Validation exception"
+            "description": "Validation exception",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ".dependencies/ronin-contract-shared-v1/ronin-contract-shared-v1.json#/components/schemas/Error"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -132,13 +153,34 @@
             }
           },
           "400": {
-            "description": "Bad Request"
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ".dependencies/ronin-contract-shared-v1/ronin-contract-shared-v1.json#/components/schemas/Error"
+                }
+              }
+            }
           },
           "401": {
-            "description": "Not Authorized"
+            "description": "Not Authorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ".dependencies/ronin-contract-shared-v1/ronin-contract-shared-v1.json#/components/schemas/Error"
+                }
+              }
+            }
           },
           "405": {
-            "description": "Validation exception"
+            "description": "Validation exception",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ".dependencies/ronin-contract-shared-v1/ronin-contract-shared-v1.json#/components/schemas/Error"
+                }
+              }
+            }
           }
         },
         "security": [
