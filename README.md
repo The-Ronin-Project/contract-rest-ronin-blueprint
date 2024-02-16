@@ -55,17 +55,17 @@ In general, run:
 
 Available commands are mostly general gradle commands.  Important ones are:
 
-`check`: Verifies the contract using spectral tooling, making sure it's a valid contract.
+`gradle check`: Verifies the contract using spectral tooling, making sure it's a valid contract.
 
-`downloadApiDependencies`: downloads any API dependencies as specified in the `Dependencies` section above.
+`gradle downloadApiDependencies`: downloads any API dependencies as specified in the `Dependencies` section above.
 
-`build`: Runs `check`, generates schema documentation, and generates simple combined schema files.
+`gradle build`: Runs `check`, generates schema documentation, and generates simple combined schema files.
 
-`clean`: removes all generated files
+`gradle clean`: removes all generated files
 
-`assemble`: Assembles the schema into deployable archives.
+`gradle assemble`: Assembles the schema into deployable archives.
 
-`publishToMavenLocal`: publishes all outputs to the local maven repo (e.g. `$HOME/.m2/repository`).  If you are using the docker image, it will try and
+`gradle publishToMavenLocal`: publishes all outputs to the local maven repo (e.g. `$HOME/.m2/repository`).  If you are using the docker image, it will try and
 copy files in and out of the host's repository directory so they can be used for builds later on the host.
 
-`publish`: publishes all outputs to the remote Ronin maven repository.
+`gradle publish`: publishes all outputs to the remote Ronin maven repository.
